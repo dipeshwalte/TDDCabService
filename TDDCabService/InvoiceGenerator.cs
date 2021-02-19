@@ -9,9 +9,23 @@ namespace TDDCabService
         readonly int pricePerKilometer = 10;
         readonly int pricePerMinute = 1;
         readonly int minimumFare = 5;
-        public double returnTotalFare(double distance, double time)
+        double totalFare;
+        List<Ride> rides;
+        public InvoiceGenerator()
         {
-            return Math.Max(minimumFare , distance * pricePerKilometer + time * pricePerMinute);
+            totalFare = 0;
+        }
+        public double returnTotalFareForMultipleRides(List<Ride> rides)
+        {
+            foreach (Ride ride in rides)
+            {
+                totalFare += returnTotalFareForSingleRide(ride);
+            }
+            return totalFare;
+        }
+        public double returnTotalFareForSingleRide(Ride ride)
+        {
+            return Math.Max(minimumFare , ride.distance * pricePerKilometer + ride.time * pricePerMinute);
         }
     }
 }

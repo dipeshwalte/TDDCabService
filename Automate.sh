@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
-commitMessage="[Dipesh] modify CalculateFareLogicAdded"
-currentBranchName="UC1CalculateFare"
-newBranchName="UC2MultipleRides"
+commitMessage="[Dipesh] modify MultipleRidesCodeAdded"
+currentBranchName="UC2MultipleRides"
+newBranchName="UC3EnhancedInvoice"
 echo --------git status---------
 echo
 git status
