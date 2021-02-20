@@ -6,14 +6,28 @@ namespace TDDCabService
 {
    public class InvoiceGenerator
     {
-        readonly int pricePerKilometer = 10;
-        readonly int pricePerMinute = 1;
-        readonly int minimumFare = 5;
+        public enum ServiceType
+        { NORMAL_RIDE,PREMIUM_RIDE }
+        readonly int pricePerKilometer;
+        readonly int pricePerMinute;
+        readonly int minimumFare;
         public double totalFare;
         public int numberOfRides;
         public double averagePerRide;
-        public InvoiceGenerator()
+        public InvoiceGenerator(ServiceType type)
         {
+            if (type == ServiceType.NORMAL_RIDE)
+            {
+                this.pricePerKilometer = 10;
+                this.pricePerMinute = 1;
+                this.minimumFare = 5;
+            }
+            else if (type == ServiceType.PREMIUM_RIDE)
+            {
+                this.pricePerKilometer = 15;
+                this.pricePerMinute = 2;
+                this.minimumFare = 20;
+            }
             totalFare = 0;
             numberOfRides = 0;
         }

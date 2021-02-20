@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 commitMessage="[Dipesh] modify MultipleRidesCodeAdded"
-currentBranchName="UC3EnhancedInvoice"
-newBranchName="UC4ListOfRides"
+currentBranchName="UC4ListOfRides"
+newBranchName="UC5PremiumRides"
 echo --------git status---------
 echo
 git status
