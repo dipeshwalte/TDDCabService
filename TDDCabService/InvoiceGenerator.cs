@@ -58,15 +58,23 @@ namespace TDDCabService
         /// </exception>
         public double returnTotalFareForSingleRide(Ride ride)
         {
-            if (ride.distance < 0)
-            {
-                throw new InvoiceGeneratorException(InvoiceGeneratorException.ExceptionType.INVALID_DISTANCE, "Invalid distance encountered!");
-            }
-            if (ride.time < 0)
-            {
-                throw new InvoiceGeneratorException(InvoiceGeneratorException.ExceptionType.INVALID_TIME, "Invalid time encountered!");
-            }
-            return Math.Max(minimumFare , ride.distance * pricePerKilometer + ride.time * pricePerMinute);
+           // try
+           // {
+                if (ride.distance < 0)
+                {
+                    throw new InvoiceGeneratorException(InvoiceGeneratorException.ExceptionType.INVALID_DISTANCE, "Invalid distance encountered!");
+                }
+                if (ride.time < 0)
+                {
+                    throw new InvoiceGeneratorException(InvoiceGeneratorException.ExceptionType.INVALID_TIME, "Invalid time encountered!");
+                }
+                return Math.Max(minimumFare, ride.distance * pricePerKilometer + ride.time * pricePerMinute);
+            //}
+            //catch (Exception ex)
+           // {
+             //   Console.WriteLine(ex.Message); 
+            //}
+            
         }
     }
 }
